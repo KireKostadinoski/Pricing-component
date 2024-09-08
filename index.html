@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <title>Pircing component</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .slider::-webkit-slider-runnable-track {
+            background-color: #e9f0fa;
+            height: 8px;
+            border-radius: 4px;
+        }
+
+        .slider::-moz-range-track {
+            background-color: #e9f0fa;
+            height: 8px;
+            border-radius: 4px;
+        }
+
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            background-color: #22ada0;
+            background-image: url('./images/icon-slider.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 60%;
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 14px 32px #32feea;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            top: -13px;
+        }
+
+        .slider::-webkit-slider-thumb:hover {
+            background-color: #87ede3;
+        }
+
+        .slider::-moz-range-thumb {
+            background-color: #22ada0;
+            background-image: url('./images/icon-slider.svg');
+
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 60%;
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 14px 32px #32feea;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            top: -13px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="bg-VeryPaleBlue h-screen relative">
+        <div class="flex justify-center w-full h-[60%] bg-bgPattern bg-cover bg-center bg-no-repeat pt-20 relative">
+            <div class="flex flex-col space-y-2 h-full relative text-center z-10">
+                <h1 class="text-2xl lg:text-4xl font-extrabold z-10">Simple, traffic-based pricing</h1>
+                <h4
+                    class="text-lg lg:text-xl font-semibold text-GrayishBlue flex flex-col justify-center items-center lg:flex-row lg:space-x-1 space-y-1 lg:space-y-0">
+                    <span>Sign-up for our 30 day trial.</span>
+                    <span>No credit card required.</span>
+                </h4>
+
+            </div>
+            <img src="./images/pattern-circles.svg" alt="" class="absolute inset-0 h-48 w-48 top-10 mx-auto z-0">
+
+            <div class="w-[90%] lg:w-[40%] bg-white shadow-md absolute top-72 z-20 rounded-2xl py-2 px-8">
+                <div
+                    class="flex flex-col justify-center space-y-8 lg:space-y-12 border-b-2 border-gray-200 py-8 placeholder lg:relative">
+                    <h4 id="pageViews"
+                        class="text-lg font-bold text-GrayishBlue tracking-widest text-center lg:absolute lg:top-5 lg:left-0">
+                        100K PAGEVIEWS
+                    </h4>
+                    <input type="range" min="0" max="100" value="" step="25" id="range"
+                        class="slider w-full h-2 bg-LightGrayishBlue rounded-lg appearance-none cursor-pointer lg:mb-4"
+                        style="-webkit-appearance: none;" />
+                    <div
+                        class="flex flex-row justify-center items-center space-x-4 px-8 lg:absolute lg:-top-8 lg:-right-5">
+                        <h1 class="text-4xl text-black font-extrabold" id="price">$16.00</h1>
+                        <p class="text-GrayishBlue text-xl font-bold" id="monthlyYearly">/month</p>
+                    </div>
+
+                    <div class="flex flex-row justify-center items-center lg:space-x-6 space-x-3 lg:ps-5">
+
+                        <p class=" text-GrayishBlue text-[12px] lg:text-[15px] font-semibold">Monthly Billing</p>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" value="" class="sr-only peer" id="toggleBtn" checked>
+                            <div
+                                class="relative w-14 h-6 bg-gray-200 rounded-full peer peer-checked:after:translate-x-8 rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all hover:bg-SoftCyan duration-150">
+                            </div>
+                        </label>
+                        <p class="lg:hidden text-GrayishBlue text-[12px] lg:text-[15px] font-semibold" >Yearly Billing <span
+                                class="bg-LightGrayishRed text-LightRed rounded-lg px-1 ms-1 lg:content">25%</span></p>
+                        <p class="hidden lg:flex text-GrayishBlue text-[12px] lg:text-[15px] font-semibold">Yearly Billing <span
+                                class="bg-LightGrayishRed text-LightRed rounded-lg px-1 ms-1 lg:content">25% Discount</span></p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center lg:flex-row lg:justify-between py-8 space-y-6">
+                    <div class="flex flex-col items-center lg:items-start lg:justify-center space-y-2">
+                        <div class="flex items-center space-x-4">
+                            <img src="./images/icon-check.svg" alt="" class="w-4 h-4">
+                            <p class=" text-GrayishBlue text-lg font-semibold">Unlimited websites</p>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <img src="./images/icon-check.svg" alt="" class="w-4 h-4">
+                            <p class=" text-GrayishBlue text-lg font-semibold">100% data ownership</p>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <img src="./images/icon-check.svg" alt="" class="w-4 h-4">
+                            <p class=" text-GrayishBlue text-lg font-semibold">Email reports</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="w-fit bg-DarkDesaturatedBlue text-GrayishBlue text-sm font-bold hover:text-White flex justify-center items-center px-8 py-3 rounded-full cursor-pointer duration-100">
+                        Start my trial!
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
